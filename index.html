@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+   <link rel="stylesheet" type="text/css" href="circlePainbyCanvas.css">
+ </head>
+ <body>
+    <div class="canvas-box">
+        <canvas id="J-Canvas"></canvas>
+        <canvas id="J-Canvas1"></canvas>
+    </div>
+    <script src="./circlePainbyCanvas.js"></script>
+    <script>
+        var insureObject = null;
+        var valueNum = 70;
+        var insureObject1 = null;
+        var valueNum1 = 30;
+        var ringData = {
+            radius: 100,
+            lineWidth: 20,
+            strokeStyle: ['#224060','#12cb9b'],
+            lineCap: 'round',
+            startAngle: 3*Math.PI/2,
+            endAngle: 3*Math.PI/2
+        }
+        var insureCanvas = document.getElementById('J-Canvas');
+        insureCanvas.width = 260;
+        insureCanvas.height = 260;
+        var ctx_insureCanvas = insureCanvas.getContext('2d');
+        this.insureObject = Object.assign( {}, this.ringData );
+        this.insureObject.canvas = insureCanvas;
+        this.insureObject.ctx= ctx_insureCanvas;
+        this.insureObject.percent = valueNum;
+        this.insureObject.id = null;
+
+        var insureCanvas1 = document.getElementById('J-Canvas1');
+        insureCanvas1.width = 260;
+        insureCanvas1.height = 260;
+        var ctx_insureCanvas1 = insureCanvas1.getContext('2d');
+
+        this.insureObject1 = Object.assign( {}, this.ringData );
+        this.insureObject1.canvas = insureCanvas1;
+        this.insureObject1.ctx= ctx_insureCanvas1;
+        this.insureObject1.percent = valueNum1;
+        this.insureObject1.id = null;
+        var pan = new cieclePain(this.insureObject);
+        var pan1 = new cieclePain(this.insureObject1);
+    </script>
+ </body>
+</html>
